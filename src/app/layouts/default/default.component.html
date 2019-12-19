@@ -1,0 +1,14 @@
+<app-header (toogleSidebarForMe)="sidebarToogler($event)"></app-header>
+
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav (click)="sidebarToogler()" [opened]="media.isActive('gt-sm') || sidebarOpen"
+        [mode]="media.isActive('gt-sm') ? 'side' : 'over'">
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-footer></app-footer>
