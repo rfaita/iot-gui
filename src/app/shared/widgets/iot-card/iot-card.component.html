@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>
-            Sensor XPTO
+            {{device.name}}
         </mat-card-title>
         <div fxFlex></div>
         <div fxLayoutAlign="end start" class="menu-header">
@@ -10,16 +10,16 @@
             </button>
         </div>
     </mat-card-header>
-    <!--mat-card-content>
-        <h2>23º</h2>
-    </mat-card-content-->
     <mat-card-content>
-        <mat-icon>wifi_off</mat-icon>
+        <h2>23º</h2>
     </mat-card-content>
+    <!--<mat-card-content>
+        <mat-icon>wifi_off</mat-icon>
+    </mat-card-content>-->
     <mat-card-actions>
         <div fxFlex></div>
         <div fxLayoutAlign="end start">
-            <button mat-button>
+            <button mat-button routerLink="/posts">
                 <mat-icon>bar_chart</mat-icon> DATA
             </button>
             <button mat-button>

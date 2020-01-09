@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AssetService } from 'src/app/services/asset.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
 
-  constructor() { }
+  assets: Observable<any>;
+
+  constructor(private assetService: AssetService) { }
 
   ngOnInit() {
+    this.assets = this.assetService.getAssets().pipe(
+      map(data => data._embedded.assetList)
+    );
   }
 
 }
